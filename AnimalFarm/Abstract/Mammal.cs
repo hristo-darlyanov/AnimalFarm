@@ -9,5 +9,9 @@ namespace AnimalFarm
     internal abstract class Mammal : Animal
     {
         public string livingRegion;
+
+        protected Mammal(string animalName, string animalType, double animalWeight, int foodEaten) : base(animalName, animalType, animalWeight, foodEaten)
+        {
+        }
     }
 }

@@ -28,7 +28,7 @@ namespace AnimalFarm.Animals
 
         public override void MakeSound()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("SQUEAAAAAK");
         }
     }
 }
