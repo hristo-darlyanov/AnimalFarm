@@ -10,34 +10,45 @@ namespace AnimalFarm
 {
     internal class Program
     {
+        static Animal animal = null;
+        static Food food = null;
+        static List<string> animalInfo;
+        static List<string> foodInfo;
+        static string animalType;
+        static string animalName;
+        static double animalWeight;
+        static string animalHome;
+        static string animalBreed = null;
+        static string foodType;
+        static int foodQuantity;
+
         static void Main(string[] args)
         {
-            Animal animal = null;
-            Food food = null;
-
-            var animalInfo = Console.ReadLine().Split(' ').ToList();
-
-            if (animalInfo[0] == "End")
+            while (true)
             {
-                Environment.Exit(0);
+                animalInfo = Console.ReadLine().Split(' ').ToList();
+                if (animalInfo[0] == "End")
+                {
+                    Environment.Exit(0);
+                }
+                foodInfo = Console.ReadLine().Split(' ').ToList();
+                animalType = animalInfo[0];
+                animalName = animalInfo[1];
+                animalWeight = double.Parse(animalInfo[2]);
+                animalHome = animalInfo[3];
+                animalBreed = null;
+                if (animalInfo.Count == 5)
+                {
+                    animalBreed = animalInfo[4];
+                }
+                foodType = foodInfo[0];
+                foodQuantity = int.Parse(foodInfo[1]);
+                ChosenAnimalDoesStuff();
             }
+        }
 
-            var foodInfo = Console.ReadLine().Split(' ').ToList();
-
-            string animalType = animalInfo[0];
-            string animalName = animalInfo[1];
-            double animalWeight = double.Parse(animalInfo[2]);
-            string animalHome = animalInfo[3];
-            string animalBreed = null;
-
-            if (animalInfo.Count == 5)
-            {
-                animalBreed = animalInfo[4];
-            }
-
-            string foodType = foodInfo[0];
-            int foodQuantity = int.Parse(foodInfo[1]);
-
+        private static void ChosenAnimalDoesStuff()
+        {
             if (animalType == "Cat")
             {
                 animal = new Cat(animalName, animalType, animalWeight, 0, animalHome, animalBreed);
@@ -66,6 +77,7 @@ namespace AnimalFarm
             animal.MakeSound();
             animal.Eat(food);
             Console.WriteLine(animal.ToString());
+            Console.WriteLine();
         }
     }
 }
