@@ -12,7 +12,7 @@ namespace AnimalFarm.Animals
     {
         public string breed;
 
-        public Cat(string animalName, string animalType, double animalWeight, int foodEaten, string breed) : base(animalName, animalType, animalWeight, foodEaten)
+        public Cat(string animalName, string animalType, double animalWeight, int foodEaten, string livingRegion, string breed) : base(animalName, animalType, animalWeight, foodEaten, livingRegion)
         {
             this.breed = breed;
         }
@@ -29,7 +29,7 @@ namespace AnimalFarm.Animals
 
         public override string ToString()
         {
-            return $"{animalType}[{animalName}, {breed}, {animalWeight}, Home, {foodEaten}]";
+            return $"{animalType}[{animalName}, {breed}, {animalWeight}, {livingRegion}, {foodEaten}]";
         }
     }
 }

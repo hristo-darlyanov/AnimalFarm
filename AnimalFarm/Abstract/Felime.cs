@@ -11,5 +11,9 @@ namespace AnimalFarm.Abstract
         protected Felime(string animalName, string animalType, double animalWeight, int foodEaten) : base(animalName, animalType, animalWeight, foodEaten)
         {
         }
+
+        protected Felime(string animalName, string animalType, double animalWeight, int foodEaten, string livingRegion) : base(animalName, animalType, animalWeight, foodEaten, livingRegion)
+        {
+        }
     }
 }

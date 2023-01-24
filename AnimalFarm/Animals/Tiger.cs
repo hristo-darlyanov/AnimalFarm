@@ -19,7 +19,7 @@ namespace AnimalFarm.Animals
 
         public override void Eat(Food food)
         {
-            if (food.GetType() == typeof(Meat))
+            if (food.GetType() == typeof(Vegetable))
             {
                 Console.WriteLine($"{animalType} cannot eat that type of food");
             }

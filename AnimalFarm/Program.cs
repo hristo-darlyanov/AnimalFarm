@@ -1,4 +1,5 @@
 ﻿using AnimalFarm.Animals;
+using AnimalFarm.FoodTypes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,35 +12,60 @@ namespace AnimalFarm
     {
         static void Main(string[] args)
         {
-            List<Animal> animals = new List<Animal>();
+            Animal animal = null;
+            Food food = null;
 
             var animalInfo = Console.ReadLine().Split(' ').ToList();
+
+            if (animalInfo[0] == "End")
+            {
+                Environment.Exit(0);
+            }
+
             var foodInfo = Console.ReadLine().Split(' ').ToList();
 
-            string animalType = animalInfo[0].ToLower();
+            string animalType = animalInfo[0];
             string animalName = animalInfo[1];
             double animalWeight = double.Parse(animalInfo[2]);
-            string animalHomeOrBreed = animalInfo[3];
+            string animalHome = animalInfo[3];
+            string animalBreed = null;
+
+            if (animalInfo.Count == 5)
+            {
+                animalBreed = animalInfo[4];
+            }
 
             string foodType = foodInfo[0];
             int foodQuantity = int.Parse(foodInfo[1]);
 
-            if (animalType == "cat")
+            if (animalType == "Cat")
             {
-                animals.Add(new Cat(animalName, animalType, animalWeight, 0, animalHomeOrBreed));
+                animal = new Cat(animalName, animalType, animalWeight, 0, animalHome, animalBreed);
             }
-            else if (animalType == "mouse")
+            else if (animalType == "Mouse")
             {
-                animals.Add(new Mouse(animalName, animalType, animalWeight, 0, animalHomeOrBreed));
+                animal = new Mouse(animalName, animalType, animalWeight, 0, animalHome);
             }
-            else if (animalType == "tiger")
+            else if (animalType == "Tiger")
             {
-                animals.Add(new Tiger(animalName, animalType, animalWeight, 0, animalHomeOrBreed));
+                animal = new Tiger(animalName, animalType, animalWeight, 0, animalHome);
             }
-            else if (animalType == "zebra")
+            else if (animalType == "Zebra")
             {
-                animals.Add(new Zebra(animalName, animalType, animalWeight, 0, animalHomeOrBreed));
+                animal = new Zebra(animalName, animalType, animalWeight, 0, animalHome);
             }
+            if (foodType == "Vegetable")
+            {
+                food = new Vegetable(foodQuantity);
+            }
+            else if (foodType == "Meat")
+            {
+                food = new Meat(foodQuantity);
+            }
+
+            animal.MakeSound();
+            animal.Eat(food);
+            Console.WriteLine(animal.ToString());
         }
     }
 }
