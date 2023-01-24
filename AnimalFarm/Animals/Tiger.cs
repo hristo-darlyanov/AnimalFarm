@@ -25,8 +25,7 @@ namespace AnimalFarm.Animals
             }
             else
             {
-                animalWeight += food.quantity;
-                foodEaten += 1;
+                foodEaten += food.quantity;
             }
         }
 

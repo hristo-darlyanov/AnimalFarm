@@ -19,8 +19,7 @@ namespace AnimalFarm.Animals
 
         public override void Eat(Food food)
         {
-            animalWeight += food.quantity;
-            foodEaten += 1;
+            foodEaten += food.quantity;
         }
 
         public override void MakeSound()

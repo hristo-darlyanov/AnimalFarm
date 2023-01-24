@@ -8,9 +8,9 @@ namespace AnimalFarm
 {
     internal abstract class Food
     {
-        public double quantity;
+        public int quantity;
 
-        protected Food(double quantity)
+        protected Food(int quantity)
         {
             this.quantity = quantity;
         }

@@ -8,7 +8,7 @@ namespace AnimalFarm.FoodTypes
 {
     internal class Meat : Food
     {
-        public Meat(double quantity) : base(quantity)
+        public Meat(int quantity) : base(quantity)
         {
         }
     }
