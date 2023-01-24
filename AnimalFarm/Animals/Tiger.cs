@@ -10,8 +10,11 @@ namespace AnimalFarm.Animals
 {
     internal class Tiger : Felime
     {
-        public Tiger(string animalName, string animalType, double animalWeight, int foodEaten) : base(animalName, animalType, animalWeight, foodEaten)
+        public string livingRegion;
+
+        public Tiger(string animalName, string animalType, double animalWeight, int foodEaten, string livingRegion) : base(animalName, animalType, animalWeight, foodEaten)
         {
+            this.livingRegion = livingRegion;
         }
 
         public override void Eat(Food food)
@@ -30,6 +33,11 @@ namespace AnimalFarm.Animals
         public override void MakeSound()
         {
             Console.WriteLine("ROAAAR");
+        }
+
+        public override string ToString()
+        {
+            return $"{animalType}[{animalName}, {animalWeight}, {livingRegion}, {foodEaten}]";
         }
     }
 }

@@ -9,7 +9,7 @@ namespace AnimalFarm.Animals
 {
     internal class Mouse : Mammal
     {
-        public Mouse(string animalName, string animalType, double animalWeight, int foodEaten) : base(animalName, animalType, animalWeight, foodEaten)
+        public Mouse(string animalName, string animalType, double animalWeight, int foodEaten, string livingRegion) : base(animalName, animalType, animalWeight, foodEaten, livingRegion)
         {
         }
 
@@ -29,6 +29,11 @@ namespace AnimalFarm.Animals
         public override void MakeSound()
         {
             Console.WriteLine("SQUEAAAAAK");
+        }
+
+        public override string ToString()
+        {
+            return $"{animalType}[{animalName}, {animalWeight}, {livingRegion}, {foodEaten}]";
         }
     }
 }

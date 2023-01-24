@@ -10,8 +10,11 @@ namespace AnimalFarm.Animals
 {
     internal class Cat : Felime
     {
-        public Cat(string animalName, string animalType, double animalWeight, int foodEaten) : base(animalName, animalType, animalWeight, foodEaten)
+        public string breed;
+
+        public Cat(string animalName, string animalType, double animalWeight, int foodEaten, string breed) : base(animalName, animalType, animalWeight, foodEaten)
         {
+            this.breed = breed;
         }
 
         public override void Eat(Food food)
@@ -23,6 +26,11 @@ namespace AnimalFarm.Animals
         public override void MakeSound()
         {
             Console.WriteLine("Moewwwww");
+        }
+
+        public override string ToString()
+        {
+            return $"{animalType}[{animalName}, {breed}, {animalWeight}, Home, {foodEaten}]";
         }
     }
 }
