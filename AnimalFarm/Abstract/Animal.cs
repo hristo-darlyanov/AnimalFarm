@@ -13,6 +13,14 @@ namespace AnimalFarm
         public double animalWeight;
         public int foodEaten;
 
+        protected Animal(string animalName, string animalType, double animalWeight, int foodEaten)
+        {
+            this.animalName = animalName;
+            this.animalType = animalType;
+            this.animalWeight = animalWeight;
+            this.foodEaten = foodEaten;
+        }
+
         public abstract void MakeSound();
 
         public abstract void Eat(Food food);

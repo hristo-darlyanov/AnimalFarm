@@ -8,6 +8,11 @@ namespace AnimalFarm
 {
     internal abstract class Food
     {
-        public int quality;
+        public double quantity;
+
+        protected Food(double quantity)
+        {
+            this.quantity = quantity;
+        }
     }
 }
